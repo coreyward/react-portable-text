@@ -1,0 +1,11 @@
+# System files
+.DS_Store
+
+# Project dependencies
+node_modules
+
+# Logs
+yarn-error.log
+
+# Build output
+dist/
