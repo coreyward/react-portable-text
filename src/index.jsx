@@ -11,15 +11,21 @@ import SanityBlockContent from "@sanity/block-content-to-react"
  * @param {object} props.serializers Optional serialization overrides
  * @returns
  */
-const PortableText = ({ content, className, serializers = {} }) => {
+const PortableText = ({
+  content,
+  className,
+  serializers = {},
+  ...additionalOptions
+}) => {
   if (!content) throw new Error("No `content` provided to PortableText.")
 
   return (
     <SanityBlockContent
       blocks={content}
-      renderContainerOnSingleChild
       className={className}
       serializers={buildSerializer(serializers)}
+      renderContainerOnSingleChild
+      {...additionalOptions}
     />
   )
 }
