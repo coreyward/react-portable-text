@@ -17,8 +17,6 @@ const PortableText = ({ content, className, serializers = {} }) => {
   return (
     <SanityBlockContent
       blocks={content}
-      projectId={process.env.SANITY_PROJECT_ID}
-      dataset={process.env.SANITY_DATASET}
       renderContainerOnSingleChild
       className={className}
       serializers={buildSerializer(serializers)}
