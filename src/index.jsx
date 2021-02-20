@@ -54,6 +54,8 @@ PortableText.propTypes = {
     h2: PropTypes.func,
     h3: PropTypes.func,
     h4: PropTypes.func,
+    h5: PropTypes.func,
+    h6: PropTypes.func,
     blockquote: PropTypes.func,
   }),
 }
@@ -78,6 +80,8 @@ const buildSerializer = (serializers) => {
     h2,
     h3,
     h4,
+    h5,
+    h6,
     blockquote,
 
     ...customSerializers
@@ -88,6 +92,8 @@ const buildSerializer = (serializers) => {
     h2,
     h3,
     h4,
+    h5,
+    h6,
     blockquote,
   }
 
