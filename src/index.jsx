@@ -12,6 +12,8 @@ import SanityBlockContent from "@sanity/block-content-to-react"
  * @returns
  */
 const PortableText = ({ content, className, serializers = {} }) => {
+  if (!content) throw new Error("No `content` provided to PortableText.")
+
   return (
     <SanityBlockContent
       blocks={content}
