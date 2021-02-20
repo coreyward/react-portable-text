@@ -11,7 +11,7 @@ import SanityBlockContent from "@sanity/block-content-to-react"
  * @param {object} props.serializers Optional serialization overrides
  * @returns
  */
-const PortableText = ({ content, className, serializers }) => {
+const PortableText = ({ content, className, serializers = {} }) => {
   return (
     <SanityBlockContent
       blocks={content}
