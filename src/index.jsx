@@ -154,8 +154,22 @@ const buildSerializer = (serializers) => {
 const scrubMarkProps = (serializers) =>
   Object.entries(serializers).reduce((output, [name, serializer]) => {
     if (serializer) {
-      const wrapper = ({ _type, _key, mark, markKey, children, ...props }) =>
-        React.createElement(serializer, props, children)
+      const wrapper = ({ _type, _key, mark, markKey, children, ...props }) => {
+        // Sometimes the `mark` prop is a string that we want to ignore,
+        // but other times it is an object with _key, _type, and other
+        // props that we want to pass through. In that case, we iterate
+        // through the `mark` object properties and add them to the
+        // `props` that we pass to the serializer.
+        if (typeof mark === "object") {
+          const { _type, _key, ...markProps } = mark
+          Object.entries(markProps).forEach(([name, value]) => {
+            props[name] = value
+          })
+        }
+
+        return React.createElement(serializer, props, children)
+      }
+
       wrapper.displayName = `${upperFirst(name)}Wrapper`
       output[name] = wrapper
     }
