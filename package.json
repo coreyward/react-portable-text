@@ -15,7 +15,7 @@
     "@sanity/block-content-to-react": "^2.0.0"
   },
   "peerDependencies": {
-    "react": ">16.8.0"
+    "react": ">16.8.0 || ^17.0.0"
   },
   "devDependencies": {
     "@sanity/block-content-to-react": "^2.0.0",
