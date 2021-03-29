@@ -62,6 +62,9 @@ PortableText.propTypes = {
 
 const buildSerializer = (serializers) => {
   const {
+    // Block wrapper
+    container = "div",
+
     // Marks
     link,
     strong,
@@ -98,6 +101,7 @@ const buildSerializer = (serializers) => {
   }
 
   return {
+    container,
     marks: scrubMarkProps({
       link,
       strong,
