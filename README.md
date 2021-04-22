@@ -20,7 +20,7 @@ const YourComponent = ({ portableTextContent }) => (
       // Optionally override marks, decorators, blocks, etc. in a flat
       // structure without doing any gymnastics
       serializers={{
-        h1: props => <h1 style={{ color: "red" }} {...props} />
+        h1: props => <h1 style={{ color: "red" }} {...props} />,
         li: ({ children }) => <li className="special-list-item">{children}</li>,
         someCustomType: YourComponent,
       }}
