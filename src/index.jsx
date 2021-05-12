@@ -112,16 +112,16 @@ const buildSerializer = (serializers) => {
       ...customSerializers,
     }),
     list: (props) => {
-      const { type, children } = props
+      const { type, level, children } = props
       const overrideType = type === "bullet" ? ul : ol
       return overrideType
-        ? overrideType({ children })
+        ? overrideType({ level, children })
         : SanityBlockContent.defaultSerializers.list(props)
     },
     listItem: (props) => {
-      const { children } = props
+      const { index, children } = props
       return li
-        ? li({ children })
+        ? li({ index, children })
         : SanityBlockContent.defaultSerializers.listItem(props)
     },
     types: {
