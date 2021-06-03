@@ -72,6 +72,7 @@ block-level insertion types).
 | `h4`         | Heading level 4                        |
 | `h5`         | Heading level 5                        |
 | `h6`         | Heading level 6                        |
+| `normal`     | Paragraph styles                       |
 | `blockquote` | Blockquote styles                      |
 
 ### Additional Props
