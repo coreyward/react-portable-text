@@ -16,11 +16,10 @@ const YourComponent = ({ portableTextContent }) => (
     <PortableText
       // Pass in block content straight from Sanity.io
       content={portableTextContent}
-
       // Optionally override marks, decorators, blocks, etc. in a flat
       // structure without doing any gymnastics
       serializers={{
-        h1: props => <h1 style={{ color: "red" }} {...props} />,
+        h1: (props) => <h1 style={{ color: "red" }} {...props} />,
         li: ({ children }) => <li className="special-list-item">{children}</li>,
         someCustomType: YourComponent,
       }}
@@ -52,28 +51,35 @@ properties of the `serializers` object as custom types. Custom types are used
 for both `type` and `block` blocks (i.e. custom marks as well as custom
 block-level insertion types).
 
-| Serializer   | Notes                                  |
-| ------------ | -------------------------------------- |
-| **Marks**    |
-| `link`       | All `link` marks used for anchor links |
-| `strong`     | Bold/strong text                       |
-| `em`         | Emphasized/italic text                 |
-| `underline`  | Underlined text                        |
-| `del`        | Text with strikethrough styles         |
-| `code`       | Inline text with `code styling`        |
-| **Lists**    |
-| `ul`         | Unordered lists                        |
-| `ol`         | Ordered lists                          |
-| `li`         | List items for any type of list        |
-| **Blocks**   |
-| `h1`         | Heading level 1                        |
-| `h2`         | Heading level 2                        |
-| `h3`         | Heading level 3                        |
-| `h4`         | Heading level 4                        |
-| `h5`         | Heading level 5                        |
-| `h6`         | Heading level 6                        |
-| `normal`     | Paragraph styles                       |
-| `blockquote` | Blockquote styles                      |
+| Serializer        | Notes                                                                                    |
+| ----------------- | ---------------------------------------------------------------------------------------- |
+| **Marks**         |
+| `link`            | All `link` marks used for anchor links                                                   |
+| `strong`          | Bold/strong text                                                                         |
+| `em`              | Emphasized/italic text                                                                   |
+| `underline`       | Underlined text                                                                          |
+| `del`             | Text with strikethrough styles                                                           |
+| `code`            | Inline text with `code styling`                                                          |
+| **Lists**         |
+| `ul`              | Unordered lists                                                                          |
+| `ol`              | Ordered lists                                                                            |
+| `li`              | List items for any type of list                                                          |
+| **Blocks**        |
+| `h1`              | Heading level 1                                                                          |
+| `h2`              | Heading level 2                                                                          |
+| `h3`              | Heading level 3                                                                          |
+| `h4`              | Heading level 4                                                                          |
+| `h5`              | Heading level 5                                                                          |
+| `h6`              | Heading level 6                                                                          |
+| `normal`          | Paragraph styles                                                                         |
+| `blockquote`      | Blockquote styles                                                                        |
+| **Special Types** |                                                                                          |
+| `container`       | Override the component wrapping the blocks                                               |
+| `block`           | Override the default block serializer (not recommended)                                  |
+| `span`            | Override the default span serializer (not recommended)                                   |
+| `hardBreak`       | Serializer for newlines; defaults to `br`; pass `false` to preserve newlines             |
+| `unknownType`     | Fallback for blocks of unknown type, if `ignoreUnknownTypes` is set to `false` (default) |
+| `unknownMark`     | Fallback for marks of unknown type; defaults to a plain `span`                           |
 
 ### Additional Props
 
