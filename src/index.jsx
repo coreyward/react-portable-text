@@ -37,26 +37,26 @@ PortableText.propTypes = {
   className: PropTypes.string,
   serializers: PropTypes.shape({
     // Marks
-    link: PropTypes.func,
-    strong: PropTypes.func,
-    em: PropTypes.func,
-    underline: PropTypes.func,
-    del: PropTypes.func,
-    code: PropTypes.func,
+    link: PropTypes.elementType,
+    strong: PropTypes.elementType,
+    em: PropTypes.elementType,
+    underline: PropTypes.elementType,
+    del: PropTypes.elementType,
+    code: PropTypes.elementType,
 
     // Lists
-    ul: PropTypes.func,
-    ol: PropTypes.func,
-    li: PropTypes.func,
+    ul: PropTypes.elementType,
+    ol: PropTypes.elementType,
+    li: PropTypes.elementType,
 
     // Blocks
-    h1: PropTypes.func,
-    h2: PropTypes.func,
-    h3: PropTypes.func,
-    h4: PropTypes.func,
-    h5: PropTypes.func,
-    h6: PropTypes.func,
-    blockquote: PropTypes.func,
+    h1: PropTypes.elementType,
+    h2: PropTypes.elementType,
+    h3: PropTypes.elementType,
+    h4: PropTypes.elementType,
+    h5: PropTypes.elementType,
+    h6: PropTypes.elementType,
+    blockquote: PropTypes.elementType,
   }),
 }
 
