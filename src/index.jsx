@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import SanityBlockContent from "@sanity/block-content-to-react"
 
+const defaultSerializers = SanityBlockContent.defaultSerializers
+
 /**
  * Renders an array of Portable Text blocks as React components.
  *
@@ -57,14 +59,19 @@ PortableText.propTypes = {
     h5: PropTypes.elementType,
     h6: PropTypes.elementType,
     blockquote: PropTypes.elementType,
+
+    // Overrides of default handlers
+    container: PropTypes.elementType,
+    block: PropTypes.elementType,
+    span: PropTypes.elementType,
+    hardBreak: PropTypes.elementType,
+    unknownType: PropTypes.elementType,
+    unknownMark: PropTypes.elementType,
   }),
 }
 
 const buildSerializer = (serializers) => {
   const {
-    // Block wrapper
-    container = "div",
-
     // Marks
     link,
     strong,
@@ -87,6 +94,14 @@ const buildSerializer = (serializers) => {
     h6,
     blockquote,
 
+    // Top-level serializers to pass through as-is
+    container = "div",
+    block = defaultSerializers.BlockSerializer,
+    span = defaultSerializers.SpanSerializer,
+    hardBreak = defaultSerializers.HardBreakSerializer,
+    unknownType = defaultSerializers.DefaultUnknownTypeSerializer,
+    unknownMark = "span",
+
     ...customSerializers
   } = serializers
 
@@ -102,6 +117,11 @@ const buildSerializer = (serializers) => {
 
   return {
     container,
+    block,
+    span,
+    hardBreak,
+    unknownType,
+    unknownMark,
     marks: scrubMarkProps({
       link,
       strong,
