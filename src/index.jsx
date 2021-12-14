@@ -9,7 +9,7 @@ const defaultSerializers = SanityBlockContent.defaultSerializers
  *
  * @param {object} props
  * @param {object[]} props.content Array of portable text blocks
- * @param {string} props.className Optional className
+ * @param {string | undefined} props.className Optional className
  * @param {object} props.serializers Optional serialization overrides
  * @returns
  */
