@@ -8,7 +8,7 @@ const defaultSerializers = SanityBlockContent.defaultSerializers
  * Renders an array of Portable Text blocks as React components.
  *
  * @param {object} props
- * @param {[object]} props.content Array of portable text blocks
+ * @param {object[]} props.content Array of portable text blocks
  * @param {string} props.className Optional className
  * @param {object} props.serializers Optional serialization overrides
  * @returns
