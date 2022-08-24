@@ -117,3 +117,7 @@ Did I miss something? Is something not compatible with your setup?
 [Open an issue](https://github.com/coreyward/react-portable-text/issues/new)
 with details, and if possible, a CodeSandbox reproduction. Pull requests are
 also welcomed!
+
+## License
+
+Copyright ©2022 Corey Ward. Available under the [MIT License](https://github.com/coreyward/react-portable-text/blob/master/LICENSE).
