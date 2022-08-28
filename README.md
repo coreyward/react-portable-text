@@ -1,7 +1,6 @@
 # React Portable Text
 
 [![Latest version](https://img.shields.io/npm/v/react-portable-text?label=version&color=brightGreen&logo=npm)](https://www.npmjs.com/package/react-portable-text)
-![Dependency status](https://img.shields.io/librariesio/release/npm/react-portable-text)
 [![Open issues](https://img.shields.io/github/issues/coreyward/react-portable-text)](https://github.com/coreyward/react-portable-text/issues)
 
 An easy way to render Portable Text block content in React applications.
