@@ -13,6 +13,7 @@ const defaultSerializers = SanityBlockContent.defaultSerializers
  * @param {string} [props.projectId] Project ID of your sanity project
  * @param {string} [props.className] Optional className
  * @param {object} [props.serializers] Optional serialization overrides
+ * @param {boolean} [props.ignoreUnknownTypes] Optional flag specifying whether to ignore unknown types
  * @returns
  */
 const PortableText = ({
@@ -45,6 +46,7 @@ PortableText.propTypes = {
   className: PropTypes.string,
   projectId: PropTypes.string,
   dataset: PropTypes.string,
+  ignoreUnknownTypes: PropTypes.bool,
   serializers: PropTypes.shape({
     // Marks
     link: PropTypes.elementType,
