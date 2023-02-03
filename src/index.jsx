@@ -8,7 +8,7 @@ const defaultSerializers = SanityBlockContent.defaultSerializers
  * Renders an array of Portable Text blocks as React components.
  *
  * @param {object} props
- * @param {object[]} props.content Array of portable text blocks
+ * @param {object|object[]} props.content Array of portable text blocks
  * @param {string} [props.dataset] Dataset for your sanity project
  * @param {string} [props.projectId] Project ID of your sanity project
  * @param {string} [props.className] Optional className
@@ -42,7 +42,10 @@ const PortableText = ({
 export default PortableText
 
 PortableText.propTypes = {
-  content: PropTypes.array.isRequired,
+  content: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.arrayOf(PropTypes.object),
+  ]).isRequired,
   className: PropTypes.string,
   projectId: PropTypes.string,
   dataset: PropTypes.string,
