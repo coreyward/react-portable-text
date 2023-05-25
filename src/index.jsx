@@ -25,12 +25,13 @@ const PortableText = ({
   ...additionalOptions
 }) => {
   if (!content) throw new Error("No `content` provided to PortableText.")
+  const memoizedSerializer = useMemo(() => buildSerializer(serializers), [serializers])
 
   return (
     <SanityBlockContent
       blocks={content}
       className={className}
-      serializers={buildSerializer(serializers)}
+      serializers={memoizedSerializer}
       renderContainerOnSingleChild
       dataset={dataset}
       projectId={projectId}
