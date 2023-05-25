@@ -25,7 +25,10 @@ const PortableText = ({
   ...additionalOptions
 }) => {
   if (!content) throw new Error("No `content` provided to PortableText.")
-  const memoizedSerializer = useMemo(() => buildSerializer(serializers), [serializers])
+  const memoizedSerializer = useMemo(
+    () => buildSerializer(serializers),
+    [serializers]
+  )
 
   return (
     <SanityBlockContent
