@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useMemo } from "react"
 import PropTypes from "prop-types"
 import SanityBlockContent from "@sanity/block-content-to-react"
 
