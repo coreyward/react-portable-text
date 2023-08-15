@@ -5,6 +5,10 @@
 
 An easy way to render Portable Text block content in React applications.
 
+Want to display images from Sanity in your Portable Text content? Check out
+[sanity-image](https://github.com/coreyward/sanity-image). No extra fields
+required in your GROQ query.
+
 ## Quick Example
 
 ```sh
@@ -123,4 +127,5 @@ also welcomed!
 
 ## License
 
-Copyright ©2022 Corey Ward. Available under the [MIT License](https://github.com/coreyward/react-portable-text/blob/master/LICENSE).
+Copyright ©2022 Corey Ward. Available under the
+[MIT License](https://github.com/coreyward/react-portable-text/blob/master/LICENSE).
