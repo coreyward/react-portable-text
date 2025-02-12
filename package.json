@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@sanity/block-content-to-react": "^3.0.0",
-    "esbuild": "^0.8.57",
+    "esbuild": "^0.25.0",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-config-standard": "^16.0.2",
